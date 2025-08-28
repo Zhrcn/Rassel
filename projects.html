@@ -19,6 +19,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="font-sans bg-bg text-primary">
+    <!-- Skip Links for Accessibility -->
+    <div class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
+      <a href="#main-content" class="hover:underline">Skip to main content</a>
+      <span class="mx-2">|</span>
+      <a href="#site-header" class="hover:underline">Skip to navigation</a>
+      <span class="mx-2">|</span>
+      <a href="#contact" class="hover:underline">Skip to contact</a>
+    </div>
+
     <!-- Header / Navigation -->
     <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-black/5 transition-all">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,6 +64,8 @@
       </div>
     </header>
 
+    <!-- Main Content -->
+    <main id="main-content">
     <!-- Hero -->
     <section class="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,6 +179,7 @@
         </div>
       </div>
     </footer>
+    </main>
 
     <script src="./projects-data.js"></script>
     <script>

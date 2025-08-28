@@ -991,7 +991,7 @@
 				window.projectsController = controllers.projects;
 			}
 
-			// Add smooth scrolling to all anchor links
+			// Enhanced smooth scrolling with accessibility
 			document.querySelectorAll('a[href*="#"]').forEach(link => {
 				link.addEventListener('click', function(e) {
 					const href = this.getAttribute('href');
@@ -1006,6 +1006,13 @@
 					if (target && href.split('#')[0] === '' || href.split('#')[0] === window.location.pathname.split('/').pop()) {
 						e.preventDefault();
 						utils.scrollTo(target);
+						
+						// Improve accessibility by managing focus
+						target.setAttribute('tabindex', '-1');
+						setTimeout(() => {
+							target.focus({ preventScroll: true });
+							target.removeAttribute('tabindex');
+						}, 500);
 					}
 				});
 			});
@@ -1024,15 +1031,16 @@
 				}
 			});
 
-			// Add magnetic effect to elements
-			document.querySelectorAll('.magnetic').forEach(element => {
-				element.addEventListener('mouseenter', function() {
-					this.style.transform = 'translateY(-4px) scale(1.02)';
-				});
-				element.addEventListener('mouseleave', function() {
-					this.style.transform = '';
-				});
-			});
+			// Add magnetic effect to elements with keyboard support
+			// document.querySelectorAll('.magnetic').forEach(element => {
+			// 	const addEffect = () => this.style.transform = 'translateY(-4px) scale(1.02)';
+			// 	const removeEffect = () => this.style.transform = '';
+				
+			// 	element.addEventListener('mouseenter', addEffect);
+			// 	element.addEventListener('mouseleave', removeEffect);
+			// 	element.addEventListener('focusin', addEffect);
+			// 	element.addEventListener('focusout', removeEffect);
+			// });
 
 			// Add intersection observer for scroll animations
 			const observeElements = document.querySelectorAll('[data-animate]');
@@ -1062,11 +1070,137 @@
 				}
 			}
 
+			// Setup accessibility enhancements
+			// this.setupAccessibilityEnhancements();
+			
 			console.log('RASEEL Innovation - App initialized successfully');
 		} catch (error) {
 			console.error('Error initializing:', error);
+			// Show user-friendly error message
+			const errorDiv = document.createElement('div');
+			errorDiv.className = 'fixed top-4 right-4 z-50 p-4 bg-red-500 text-white rounded-lg shadow-lg';
+			errorDiv.textContent = 'Something went wrong. Please refresh the page.';
+			document.body.appendChild(errorDiv);
+			setTimeout(() => errorDiv.remove(), 5000);
 		}
 	}
+	
+	// Accessibility Enhancement Function
+	// function setupAccessibilityEnhancements() {
+	// 	// Track keyboard navigation
+	// 	let isUsingKeyboard = false;
+		
+	// 	document.addEventListener('keydown', (e) => {
+	// 		if (e.key === 'Tab') {
+	// 			isUsingKeyboard = true;
+	// 			document.body.classList.add('keyboard-navigation');
+	// 		}
+			
+	// 		// Skip if user is typing in an input
+	// 		if (e.target.matches('input, textarea, select')) return;
+			
+	// 		// Alt + H for Home
+	// 		if (e.altKey && e.key === 'h') {
+	// 			e.preventDefault();
+	// 			window.location.href = 'index.html#home';
+	// 		}
+			
+	// 		// Alt + S for Services
+	// 		if (e.altKey && e.key === 's') {
+	// 			e.preventDefault();
+	// 			window.location.href = 'services.html';
+	// 		}
+			
+	// 		// Alt + P for Projects
+	// 		if (e.altKey && e.key === 'p') {
+	// 			e.preventDefault();
+	// 			window.location.href = 'projects.html';
+	// 		}
+			
+	// 		// Alt + C for Contact
+	// 		if (e.altKey && e.key === 'c') {
+	// 			e.preventDefault();
+	// 			const contactSection = document.getElementById('contact');
+	// 			if (contactSection) {
+	// 				contactSection.scrollIntoView({ behavior: 'smooth' });
+	// 				setTimeout(() => {
+	// 					const firstInput = contactSection.querySelector('input, textarea');
+	// 					if (firstInput) firstInput.focus();
+	// 				}, 500);
+	// 			} else {
+	// 				window.location.href = 'index.html#contact';
+	// 			}
+	// 		}
+			
+	// 		// Escape to close mobile menu
+	// 		if (e.key === 'Escape') {
+	// 			const mobileMenu = document.getElementById('mobile-menu');
+	// 			const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+	// 			if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+	// 				mobileMenuBtn?.click();
+	// 			}
+	// 		}
+	// 	});
+		
+	// 	document.addEventListener('mousedown', () => {
+	// 		isUsingKeyboard = false;
+	// 		document.body.classList.remove('keyboard-navigation');
+	// 	});
+		
+	// 	// Enhanced focus indicators
+	// 	document.addEventListener('focusin', (e) => {
+	// 		if (isUsingKeyboard && e.target.matches('a, button, input, textarea, select')) {
+	// 			e.target.classList.add('keyboard-focused');
+	// 		}
+	// 	});
+		
+	// 	document.addEventListener('focusout', (e) => {
+	// 		e.target.classList.remove('keyboard-focused');
+	// 	});
+		
+	// 	// Mobile menu keyboard navigation
+	// 	const mobileMenu = document.getElementById('mobile-menu');
+	// 	if (mobileMenu) {
+	// 		mobileMenu.addEventListener('keydown', (e) => {
+	// 			const menuItems = mobileMenu.querySelectorAll('a');
+	// 			const currentIndex = Array.from(menuItems).indexOf(e.target);
+				
+	// 			if (e.key === 'ArrowDown') {
+	// 				e.preventDefault();
+	// 				const nextIndex = (currentIndex + 1) % menuItems.length;
+	// 				menuItems[nextIndex]?.focus();
+	// 			} else if (e.key === 'ArrowUp') {
+	// 				e.preventDefault();
+	// 				const prevIndex = currentIndex === 0 ? menuItems.length - 1 : currentIndex - 1;
+	// 				menuItems[prevIndex]?.focus();
+	// 			}
+	// 		});
+	// 	}
+		
+	// 	// Respect reduced motion preferences
+	// 	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+	// 		document.documentElement.style.setProperty('--animation-duration', '0.01ms');
+	// 		document.documentElement.style.setProperty('--transition-duration', '0.01ms');
+			
+	// 		// Disable reveal animations
+	// 		const reveals = document.querySelectorAll('.reveal');
+	// 		reveals.forEach(el => {
+	// 			el.classList.add('is-visible');
+	// 			el.style.opacity = '1';
+	// 			el.style.transform = 'translateY(0)';
+	// 		});
+	// 	}
+		
+	// 	// Create live region for screen readers
+	// 	if (!document.getElementById('live-region')) {
+	// 		const liveRegion = document.createElement('div');
+	// 		liveRegion.id = 'live-region';
+	// 		liveRegion.setAttribute('aria-live', 'polite');
+	// 		liveRegion.setAttribute('aria-atomic', 'true');
+	// 		liveRegion.className = 'sr-only';
+	// 		document.body.appendChild(liveRegion);
+	// 	}
+	// }
 
 	// Performance mark for initialization start
 	if ('performance' in window && 'mark' in performance) {
