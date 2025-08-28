@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - RASEEL Innovation Company</title>
+    <meta name="description" content="About RASEEL Innovation Company: our story, values, and statistics." />
+    <meta property="og:title" content="About RASEEL Innovation Company" />
+    <meta property="og:description" content="Our story, values, and statistics." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#d5ad65" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans bg-bg text-primary">
+    <!-- Header / Navigation -->
+    <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-black/5 transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-16 flex items-center justify-between">
+          <a href="index.html#home" class="group flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="index.html#home" class="hover:text-accent transition">Home</a>
+            <a href="about.html" class="hover:text-accent transition">About</a>
+            <a href="services.html" class="hover:text-accent transition">Services</a>
+            <a href="projects.html" class="hover:text-accent transition">Projects</a>
+          </nav>
+          <button id="theme-toggle" class="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-bg hover:bg-black/5 transition" aria-label="Toggle theme">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded hover:bg-black/5" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <ul class="flex flex-col gap-2">
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="index.html#home">Home</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="about.html">About</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="services.html">Services</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="projects.html">Projects</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-24 pb-12 relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-accent/10 to-transparent"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-semibold animate-fade-in-up">About RASEEL</h1>
+        <p class="mt-3 text-text max-w-2xl animate-fade-in-up">Building excellence in Saudi Arabia since 2009 AD</p>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal opacity-0 translate-y-6">
+          <h2 class="text-3xl md:text-4xl font-semibold">Our Story</h2>
+          <p class="mt-4"><strong>Established:</strong> 2009 AD</p>
+          <p class="mt-1"><strong>Founder:</strong> Eng. Firas Fathi Ahmad Al-Dawalibi</p>
+          <p class="mt-4 text-text">RASEEL Innovation Company for General Contracting was established by Engineer Firas Fathi Ahmad Al-Dawalibi after several years of experience in the field of construction. Today, we are taking confident steps to provide our clients with integrated solutions for all construction projects.</p>
+          <p class="mt-3 text-text">Our driving force is passion, commitment and contribution to economic growth, and to be part of the 2030 vision of the Custodian of the Two Holy Mosques King Salman bin Abdulaziz Al Saud and Crown Prince Muhammad bin Salman Al Saud - may God protect them.</p>
+        </div>
+        <div class="reveal opacity-0 translate-y-6">
+          <img class="rounded-lgx shadow-soft" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1740&auto=format&fit=crop" alt="Team at a construction site" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Values & Strategies -->
+    <section class="py-16 bg-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-semibold text-center">Our Values & Strategies</h2>
+        <p class="text-text text-center mt-2 max-w-3xl mx-auto">We prioritize transparency, excellence, and partnership to deliver lasting value.</p>
+        <div class="mt-10 grid md:grid-cols-3 gap-6">
+          <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+            <h3 class="text-accent font-semibold">Integrity & Transparency</h3>
+            <p class="mt-2 text-text">Maintaining the highest standards of transparency and integrity to enhance the work environment.</p>
+          </article>
+          <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+            <h3 class="text-accent font-semibold">Competitive Development</h3>
+            <p class="mt-2 text-text">Providing creative and innovative solutions aiming to provide the best services.</p>
+          </article>
+          <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+            <h3 class="text-accent font-semibold">Excellence</h3>
+            <p class="mt-2 text-text">Giving priority to customers and providing the highest quality guarantees their aspirations.</p>
+          </article>
+          <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+            <h3 class="text-accent font-semibold">Cooperation & Partnership</h3>
+            <p class="mt-2 text-text">Establish the principle of cooperation with local customers and partners to achieve common goals.</p>
+          </article>
+          <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft md:col-span-3">
+            <h3 class="text-accent font-semibold">Customer Confidence & Profession</h3>
+            <p class="mt-2 text-text">Customer confidence is the goal, upgrading the profession by contributing outstanding works to society.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-semibold text-center">Company Statistics</h2>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="reveal opacity-0 translate-y-6 text-center p-6 bg-white rounded-lgx shadow-soft">
+            <div class="text-4xl font-bold text-accent">+20</div>
+            <div class="text-text mt-1">Years of experience in construction and development</div>
+          </div>
+          <div class="reveal opacity-0 translate-y-6 text-center p-6 bg-white rounded-lgx shadow-soft">
+            <div class="text-4xl font-bold text-accent">150,000</div>
+            <div class="text-text mt-1">sqm from the construction facility</div>
+          </div>
+          <div class="reveal opacity-0 translate-y-6 text-center p-6 bg-white rounded-lgx shadow-soft">
+            <div class="text-4xl font-bold text-accent">91,000</div>
+            <div class="text-text mt-1">sqm Decorations</div>
+          </div>
+          <div class="reveal opacity-0 translate-y-6 text-center p-6 bg-white rounded-lgx shadow-soft">
+            <div class="text-4xl font-bold text-accent">18,000</div>
+            <div class="text-text mt-1">sqm Redecorations</div>
+          </div>
+          <div class="reveal opacity-0 translate-y-6 text-center p-6 bg-white rounded-lgx shadow-soft">
+            <div class="text-4xl font-bold text-accent">20</div>
+            <div class="text-text mt-1">Engineers</div>
+          </div>
+          <div class="reveal opacity-0 translate-y-6 text-center p-6 bg-white rounded-lgx shadow-soft">
+            <div class="text-4xl font-bold text-accent">9</div>
+            <div class="text-text mt-1">Cities</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-black/5 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </div>
+          <p class="text-text mt-3">© <span id="year"></span> RASEEL Innovation Company for General Contracting. All rights reserved.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a class="hover:text-accent" href="index.html#home">Home</a></li>
+            <li><a class="hover:text-accent" href="services.html">Services</a></li>
+            <li><a class="hover:text-accent" href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Follow Us</h4>
+          <div class="flex gap-2">
+            <a href="#" aria-label="LinkedIn" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.5h4.38V20H4.75ZM13 8.5h4.2v1.56h.06a4.6 4.6 0 0 1 4.14-2.27c4.43 0 5.25 2.92 5.25 6.72V20h-4.38v-4.93c0-1.18 0-2.7-1.65-2.7s-1.9 1.29-1.9 2.62V20H13Z"/></svg>
+            </a>
+            <a href="https://instagram.com/RASEELINNOVATION" aria-label="Instagram" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2ZM17.4 6.6a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2Z"/><path fill="currentColor" d="M16.8 3H7.2A4.2 4.2 0 0 0 3 7.2v9.6A4.2 4.2 0 0 0 7.2 21h9.6A4.2 4.2 0 0 0 21 16.8V7.2A4.2 4.2 0 0 0 16.8 3Zm2.4 13.8a2.4 2.4 0 0 1-2.4 2.4H7.2a2.4 2.4 0 0 1-2.4-2.4V7.2a2.4 2.4 0 0 1 2.4-2.4h9.6a2.4 2.4 0 0 1 2.4 2.4Z"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M18.244 2H21l-6.557 7.49L22 22h-6.828l-4.735-6.1L4.9 22H2.142l7.02-8.01L2 2h6.907l4.27 5.64L18.244 2Zm-1.196 18h1.818L7.03 4H5.103Z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.4.6 9.4.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.5v-7L16 12Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
+

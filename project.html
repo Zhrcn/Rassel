@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project - RASEEL Innovation Company</title>
+    <meta name="description" content="Project details from RASEEL Innovation Company: overview, scope, and info." />
+    <meta property="og:title" content="Project - RASEEL" />
+    <meta property="og:description" content="Overview, scope, and project info." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1200&auto=format&fit=crop" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#d5ad65" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: '#4A4A4A', accent: '#d5ad65', bg: '#f2f0ef', text: '#8c8c8c' },
+            fontFamily: { sans: ['Poppins','ui-sans-serif','system-ui'] },
+            boxShadow: { soft: '0 10px 30px rgba(0,0,0,0.08)' },
+            borderRadius: { lgx: '18px' }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="font-sans bg-bg text-primary">
+    <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-black/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-16 flex items-center justify-between">
+          <a href="index.html#home" class="group flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="index.html#home" class="hover:text-accent transition">Home</a>
+            <a href="about.html" class="hover:text-accent transition">About</a>
+            <a href="services.html" class="hover:text-accent transition">Services</a>
+            <a href="projects.html" class="hover:text-accent transition">Projects</a>
+          </nav>
+          <button id="theme-toggle" class="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-bg hover:bg-black/5 transition" aria-label="Toggle theme">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24">
+      <section class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div id="hero" class="rounded-lgx overflow-hidden shadow-soft">
+            <img id="hero-image" class="w-full aspect-[16/9] object-cover" src="" alt="" />
+          </div>
+          <div class="mt-6">
+            <h1 id="title" class="text-3xl md:text-5xl font-semibold"></h1>
+            <p id="category" class="text-text mt-2"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 bg-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-2 space-y-6">
+            <article class="bg-white p-8 rounded-lgx shadow-soft">
+              <h2 class="text-xl font-semibold">Overview</h2>
+              <p id="overview" class="text-text mt-2">Project details coming soon.</p>
+            </article>
+            <article class="bg-white p-8 rounded-lgx shadow-soft">
+              <h2 class="text-xl font-semibold">Scope of Work</h2>
+              <ul id="scope" class="text-text mt-2 list-disc list-inside space-y-1"></ul>
+            </article>
+          </div>
+          <aside class="space-y-6">
+            <div class="bg-white p-6 rounded-lgx shadow-soft">
+              <h3 class="font-semibold">Project Info</h3>
+              <dl id="meta" class="mt-2 text-text grid grid-cols-3 gap-2"></dl>
+            </div>
+            <a href="projects.html" class="inline-flex items-center justify-center px-5 py-3 rounded-lgx bg-accent text-primary font-semibold shadow-soft">Back to Projects</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-black/5 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </div>
+          <p class="text-text mt-3">© <span id="year"></span> RASEEL Innovation Company for General Contracting. All rights reserved.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a class="hover:text-accent" href="index.html#home">Home</a></li>
+            <li><a class="hover:text-accent" href="services.html">Services</a></li>
+            <li><a class="hover:text-accent" href="projects.html">Projects</a></li>
+            <li><a class="hover:text-accent" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Follow Us</h4>
+          <div class="flex gap-2">
+            <a href="#" aria-label="LinkedIn" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.5h4.38V20H4.75ZM13 8.5h4.2v1.56h.06a4.6 4.6 0 0 1 4.14-2.27c4.43 0 5.25 2.92 5.25 6.72V20h-4.38v-4.93c0-1.18 0-2.7-1.65-2.7s-1.9 1.29-1.9 2.62V20H13Z"/></svg>
+            </a>
+            <a href="https://instagram.com/RASEELINNOVATION" aria-label="Instagram" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2ZM17.4 6.6a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2Z"/><path fill="currentColor" d="M16.8 3H7.2A4.2 4.2 0 0 0 3 7.2v9.6A4.2 4.2 0 0 0 7.2 21h9.6A4.2 4.2 0 0 0 21 16.8V7.2A4.2 4.2 0 0 0 16.8 3Zm2.4 13.8a2.4 2.4 0 0 1-2.4 2.4H7.2a2.4 2.4 0 0 1-2.4-2.4V7.2a2.4 2.4 0 0 1 2.4-2.4h9.6a2.4 2.4 0 0 1 2.4 2.4Z"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M18.244 2H21l-6.557 7.49L22 22h-6.828l-4.735-6.1L4.9 22H2.142l7.02-8.01L2 2h6.907l4.27 5.64L18.244 2Zm-1.196 18h1.818L7.03 4H5.103Z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.4.6 9.4.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.5v-7L16 12Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./projects-data.js"></script>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (function () {
+        'use strict';
+        function getParam(name) {
+          var params = new URLSearchParams(window.location.search);
+          return params.get(name) || '';
+        }
+        function setText(id, text) {
+          var el = document.getElementById(id);
+          if (el) el.textContent = text;
+        }
+        function renderMeta(meta) {
+          var dl = document.getElementById('meta');
+          if (!dl) return;
+          var rows = [
+            ['Location', meta.location || 'Saudi Arabia'],
+            ['Client', meta.client || '—'],
+            ['Year', meta.year || '—'],
+            ['Discipline', meta.category || 'General Contracting']
+          ];
+          dl.innerHTML = rows.map(function (r) {
+            return '<dt class="col-span-1">' + r[0] + '</dt><dd class="col-span-2">' + r[1] + '</dd>';
+          }).join('');
+        }
+
+        var slug = getParam('slug');
+        var proj = (window.RASEEL_PROJECTS || []).find(function (p) { return p.slug === slug; });
+        if (!proj) {
+          window.location.href = 'projects.html';
+          return;
+        }
+
+        var titleEl = document.getElementById('title');
+        var catEl = document.getElementById('category');
+        var imgEl = document.getElementById('hero-image');
+        if (titleEl) titleEl.textContent = proj.title;
+        if (catEl) catEl.textContent = proj.category || '';
+        if (imgEl) {
+          imgEl.src = proj.image;
+          imgEl.alt = proj.title + ' hero image';
+        }
+
+        setText('overview', 'Raseel Innovation delivered ' + (proj.title || 'the project') + ' with high-quality standards, focusing on schedule, cost, and safety.');
+        var scope = document.getElementById('scope');
+        if (scope) {
+          scope.innerHTML = ['Civil and structural works', 'Finishing and fit-out', 'MEP and safety systems', 'Project management'].map(function (i) { return '<li>' + i + '</li>'; }).join('');
+        }
+        renderMeta({ category: proj.category });
+      })();
+    </script>
+    <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+  </body>
+  </html>
+
+

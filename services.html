@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - RASEEL Innovation Company</title>
+    <meta name="description" content="Comprehensive construction, finishing, MEP, and project management services." />
+    <meta property="og:title" content="Services - RASEEL" />
+    <meta property="og:description" content="Construction, finishing, MEP, and project management services." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#d5ad65" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans bg-bg text-primary">
+    <!-- Skip Links for Accessibility -->
+    <div class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
+      <a href="#main-content" class="hover:underline">Skip to main content</a>
+      <span class="mx-2">|</span>
+      <a href="#site-header" class="hover:underline">Skip to navigation</a>
+      <span class="mx-2">|</span>
+      <a href="#contact" class="hover:underline">Skip to contact</a>
+    </div>
+
+    <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-black/5 transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-16 flex items-center justify-between">
+          <a href="index.html#home" class="group flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="index.html#home" class="hover:text-accent transition">Home</a>
+            <a href="about.html" class="hover:text-accent transition">About</a>
+            <a href="services.html" class="hover:text-accent transition">Services</a>
+            <a href="projects.html" class="hover:text-accent transition">Projects</a>
+          </nav>
+          <button id="theme-toggle" class="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-bg hover:bg-black/5 transition" aria-label="Toggle theme">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded hover:bg-black/5" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <ul class="flex flex-col gap-2">
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="index.html#home">Home</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="about.html">About</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="services.html">Services</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-semibold animate-fade-in-up">Our Services</h1>
+        <p class="mt-3 text-text max-w-3xl animate-fade-in-up">Comprehensive Construction, Finishing, and Project Management Solutions</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-8 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-lg text-text text-center max-w-3xl mx-auto">Our work in collaboration with our architectural consulting office includes various civil and architectural services. This includes all completing finishing, designing and building concrete structures to completing mechanical, electrical and fire safety work. Additionally, we handle projects involving steel structures, shades, metal work and fencing.</p>
+      </div>
+    </section>
+
+    <!-- Service Cards -->
+    <section class="py-16 bg-bg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+          <h3 class="font-semibold text-lg">Construction & Structural Works</h3>
+          <p class="text-text mt-1">Complete construction solutions from foundation to completion.</p>
+          <ul class="mt-3 list-disc list-inside text-text space-y-1">
+            <li>Concrete structures and foundations</li>
+            <li>Steel structures and frameworks</li>
+            <li>Building construction and development</li>
+            <li>Infrastructure projects</li>
+          </ul>
+        </article>
+        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+          <h3 class="font-semibold text-lg">Finishing Services</h3>
+          <p class="text-text mt-1">Premium interior and exterior finishes for modern, durable spaces.</p>
+          <ul class="mt-3 list-disc list-inside text-text space-y-1">
+            <li>Flooring, cladding, and painting</li>
+            <li>Joinery and fit-out solutions</li>
+            <li>Facade systems and exteriors</li>
+            <li>Decoration and redecorations</li>
+          </ul>
+        </article>
+        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+          <h3 class="font-semibold text-lg">MEP & Safety Systems</h3>
+          <p class="text-text mt-1">Complete mechanical, electrical, and fire safety installations.</p>
+          <ul class="mt-3 list-disc list-inside text-text space-y-1">
+            <li>Mechanical systems installation</li>
+            <li>Electrical systems and wiring</li>
+            <li>Fire safety and protection systems</li>
+            <li>HVAC and ventilation</li>
+          </ul>
+        </article>
+        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+          <h3 class="font-semibold text-lg">Specialized Construction</h3>
+          <p class="text-text mt-1">Specialized construction solutions for unique project requirements.</p>
+          <ul class="mt-3 list-disc list-inside text-text space-y-1">
+            <li>Metal work and fabrication</li>
+            <li>Shade structures and canopies</li>
+            <li>Fencing and security systems</li>
+            <li>Custom architectural elements</li>
+          </ul>
+        </article>
+        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+          <h3 class="font-semibold text-lg">Project Management</h3>
+          <p class="text-text mt-1">End-to-end project delivery focused on time, cost, and quality.</p>
+          <ul class="mt-3 list-disc list-inside text-text space-y-1">
+            <li>Planning and scheduling</li>
+            <li>Cost control and procurement</li>
+            <li>Quality assurance and control</li>
+            <li>Stakeholder communication</li>
+          </ul>
+        </article>
+        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
+          <h3 class="font-semibold text-lg">Architectural Consulting</h3>
+          <p class="text-text mt-1">Professional architectural design and consultation services.</p>
+          <ul class="mt-3 list-disc list-inside text-text space-y-1">
+            <li>Architectural design and planning</li>
+            <li>Interior design consultation</li>
+            <li>Project feasibility studies</li>
+            <li>Technical documentation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-black/5 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </div>
+          <p class="text-text mt-3">© <span id="year"></span> RASEEL Innovation Company for General Contracting. All rights reserved.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a class="hover:text-accent" href="index.html#home">Home</a></li>
+            <li><a class="hover:text-accent" href="services.html">Services</a></li>
+            <li><a class="hover:text-accent" href="projects.html">Projects</a></li>
+            <li><a class="hover:text-accent" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Follow Us</h4>
+          <div class="flex gap-2">
+            <a href="#" aria-label="LinkedIn" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.5h4.38V20H4.75ZM13 8.5h4.2v1.56h.06a4.6 4.6 0 0 1 4.14-2.27c4.43 0 5.25 2.92 5.25 6.72V20h-4.38v-4.93c0-1.18 0-2.7-1.65-2.7s-1.9 1.29-1.9 2.62V20H13Z"/></svg>
+            </a>
+            <a href="https://instagram.com/RASEELINNOVATION" aria-label="Instagram" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2ZM17.4 6.6a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2Z"/><path fill="currentColor" d="M16.8 3H7.2A4.2 4.2 0 0 0 3 7.2v9.6A4.2 4.2 0 0 0 7.2 21h9.6A4.2 4.2 0 0 0 21 16.8V7.2A4.2 4.2 0 0 0 16.8 3Zm2.4 13.8a2.4 2.4 0 0 1-2.4 2.4H7.2a2.4 2.4 0 0 1-2.4-2.4V7.2a2.4 2.4 0 0 1 2.4-2.4h9.6a2.4 2.4 0 0 1 2.4 2.4Z"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M18.244 2H21l-6.557 7.49L22 22h-6.828l-4.735-6.1L4.9 22H2.142l7.02-8.01L2 2h6.907l4.27 5.64L18.244 2Zm-1.196 18h1.818L7.03 4H5.103Z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.4.6 9.4.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.5v-7L16 12Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </main>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
+

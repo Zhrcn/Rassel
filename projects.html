@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - RASEEL Innovation Company</title>
+    <meta name="description" content="Explore RASEEL Innovation Company's recent projects and case studies." />
+    <meta property="og:title" content="Projects - RASEEL" />
+    <meta property="og:description" content="Recent projects and case studies." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#d5ad65" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="font-sans bg-bg text-primary">
+    <!-- Header / Navigation -->
+    <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-black/5 transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-16 flex items-center justify-between">
+          <a href="index.html#home" class="group flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="index.html#home" class="hover:text-accent transition">Home</a>
+            <a href="about.html" class="hover:text-accent transition">About</a>
+            <a href="services.html" class="hover:text-accent transition">Services</a>
+            <a href="projects.html" class="hover:text-accent transition">Projects</a>
+          </nav>
+          <button id="theme-toggle" class="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-bg hover:bg-black/5 transition" aria-label="Toggle theme">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
+            </svg>
+          </button>
+          <button id="mobile-menu-btn" class="md:hidden p-2 rounded hover:bg-black/5" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden pb-4">
+          <ul class="flex flex-col gap-2">
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="index.html#home">Home</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="about.html">About</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="services.html">Services</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="projects.html">Projects</a></li>
+            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-semibold animate-fade-in-up">Projects</h1>
+        <p class="mt-3 text-text max-w-2xl animate-fade-in-up">A selection of our recent work</p>
+      </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="pb-8 bg-gradient-to-b from-accent/10 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white p-6 rounded-lgx shadow-soft glass-morphism">
+          <div class="grid md:grid-cols-2 gap-4 mb-6">
+            <div class="relative">
+              <input 
+                type="text" 
+                id="project-search" 
+                placeholder="Search projects..." 
+                class="w-full px-4 py-3 pl-12 rounded-lgx border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+              />
+              <svg class="absolute left-4 top-3.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <select id="category-filter" class="px-4 py-3 rounded-lgx border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all bg-white">
+              <option value="">All Categories</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Industrial">Industrial</option>
+              <option value="F&B">Food & Beverage</option>
+              <option value="Retail">Retail</option>
+              <option value="Infrastructure">Infrastructure</option>
+              <option value="Government">Government</option>
+              <option value="Urban Development">Urban Development</option>
+            </select>
+          </div>
+          <div class="flex flex-wrap gap-2" id="filter-tags">
+            <!-- Filter tags will be inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Grid -->
+    <section class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-6 flex justify-between items-center">
+          <div>
+            <span id="results-count" class="text-gray-600">Loading projects...</span>
+          </div>
+          <div class="flex gap-2">
+            <button id="grid-view" class="p-2 rounded-lg bg-accent text-white transition-all hover:bg-accent-dark" aria-label="Grid view">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm8 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V4zM3 12a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4zm8 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+            <button id="list-view" class="p-2 rounded-lg bg-gray-200 text-gray-600 transition-all hover:bg-gray-300" aria-label="List view">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500"></div>
+        <div id="no-results" class="hidden text-center py-12">
+          <div class="text-gray-400 mb-4">
+            <svg class="mx-auto w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-600 mb-2">No projects found</h3>
+          <p class="text-gray-500">Try adjusting your search terms or filters</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-black/5 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
+        <div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-semibold tracking-widest">RASEEL</span>
+            <span class="text-xs text-text">Innovation Co.</span>
+          </div>
+          <p class="text-text mt-3">© <span id="year"></span> RASEEL Innovation Company for General Contracting. All rights reserved.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a class="hover:text-accent" href="index.html#home">Home</a></li>
+            <li><a class="hover:text-accent" href="services.html">Services</a></li>
+            <li><a class="hover:text-accent" href="projects.html">Projects</a></li>
+            <li><a class="hover:text-accent" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Follow Us</h4>
+          <div class="flex gap-2">
+            <a href="#" aria-label="LinkedIn" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.5h4.38V20H4.75ZM13 8.5h4.2v1.56h.06a4.6 4.6 0 0 1 4.14-2.27c4.43 0 5.25 2.92 5.25 6.72V20h-4.38v-4.93c0-1.18 0-2.7-1.65-2.7s-1.9 1.29-1.9 2.62V20H13Z"/></svg>
+            </a>
+            <a href="https://instagram.com/RASEELINNOVATION" aria-label="Instagram" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2ZM17.4 6.6a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2Z"/><path fill="currentColor" d="M16.8 3H7.2A4.2 4.2 0 0 0 3 7.2v9.6A4.2 4.2 0 0 0 7.2 21h9.6A4.2 4.2 0 0 0 21 16.8V7.2A4.2 4.2 0 0 0 16.8 3Zm2.4 13.8a2.4 2.4 0 0 1-2.4 2.4H7.2a2.4 2.4 0 0 1-2.4-2.4V7.2a2.4 2.4 0 0 1 2.4-2.4h9.6a2.4 2.4 0 0 1 2.4 2.4Z"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M18.244 2H21l-6.557 7.49L22 22h-6.828l-4.735-6.1L4.9 22H2.142l7.02-8.01L2 2h6.907l4.27 5.64L18.244 2Zm-1.196 18h1.818L7.03 4H5.103Z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.4.6 9.4.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.5v-7L16 12Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./projects-data.js"></script>
+    <script>
+      (function () {
+        'use strict';
+        var container = document.getElementById('project-grid');
+        var items = (window.RASEEL_PROJECTS || []).map(function (p) {
+          var href = 'project.html?slug=' + encodeURIComponent(p.slug);
+          return (
+            '<a href="' + href + '" class="group block reveal opacity-0 translate-y-6 rounded-lgx overflow-hidden shadow-soft bg-white">' +
+              '<img class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" src="' + p.image + '" alt="' + (p.title || 'Project') + '" />' +
+              '<div class="p-4 font-semibold">' + (p.title || '') + '</div>' +
+            '</a>'
+          );
+        }).join('');
+        if (container) container.innerHTML = items;
+      })();
+    </script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
+
