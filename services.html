@@ -1,192 +1,513 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - RASEEL Innovation Company</title>
-    <meta name="description" content="Comprehensive construction, finishing, MEP, and project management services." />
-    <meta property="og:title" content="Services - RASEEL" />
-    <meta property="og:description" content="Construction, finishing, MEP, and project management services." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#d5ad65" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./tailwind-config.js"></script>
+    <meta name="description" content="Comprehensive construction, finishing, MEP, and project management services.">
+    <meta property="og:title" content="Services - RASEEL Innovation Company">
+    <meta property="og:description" content="Construction, finishing, MEP, and project management services.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#d5ad65">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="font-sans bg-bg text-primary">
-    <!-- Skip Links for Accessibility -->
-    <div class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
-      <a href="#main-content" class="hover:underline">Skip to main content</a>
-      <span class="mx-2">|</span>
-      <a href="#site-header" class="hover:underline">Skip to navigation</a>
-      <span class="mx-2">|</span>
-      <a href="#contact" class="hover:underline">Skip to contact</a>
-    </div>
-
-    <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-black/5 transition-all">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="h-16 flex items-center justify-between">
-          <a href="index.html#home" class="group flex flex-col leading-tight">
-            <span class="font-semibold tracking-widest">RASEEL</span>
-            <span class="text-xs text-text">Innovation Co.</span>
-          </a>
-          <nav class="hidden md:flex items-center gap-8">
-            <a href="index.html#home" class="hover:text-accent transition">Home</a>
-            <a href="about.html" class="hover:text-accent transition">About</a>
-            <a href="services.html" class="hover:text-accent transition">Services</a>
-            <a href="projects.html" class="hover:text-accent transition">Projects</a>
-          </nav>
-          <button id="theme-toggle" class="hidden md:inline-flex items-center justify-center w-9 h-9 rounded-full bg-bg hover:bg-black/5 transition" aria-label="Toggle theme">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/>
-            </svg>
-          </button>
-          <button id="mobile-menu-btn" class="md:hidden p-2 rounded hover:bg-black/5" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          </button>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f7fafc',
+                            100: '#edf2f7',
+                            200: '#e2e8f0',
+                            300: '#cbd5e0',
+                            400: '#a0aec0',
+                            500: '#718096',
+                            600: '#4a5568',
+                            700: '#2d3748',
+                            800: '#1a202c',
+                            900: '#171923'
+                        },
+                        accent: {
+                            50: '#fef7e0',
+                            100: '#fdecc8',
+                            200: '#fbd691',
+                            300: '#f8c25a',
+                            400: '#f5ad23',
+                            500: '#d5ad65',
+                            600: '#b8944d',
+                            700: '#9b7b35',
+                            800: '#7e621d',
+                            900: '#614905'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'Georgia', 'serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out both',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out both',
+                        'slide-in-right': 'slideInRight 0.8s ease-out both'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(213, 173, 101, 0.4)' },
+                            '50%': { boxShadow: '0 0 40px rgba(213, 173, 101, 0.8)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS for additional styles -->
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        
+        /* Smooth transitions */
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Focus styles */
+        .focus-ring:focus {
+            outline: 2px solid #d5ad65;
+            outline-offset: 2px;
+        }
+        
+        /* Custom animations */
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200 dark:bg-gray-900/95 dark:border-gray-700 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Brand -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">R</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900 dark:text-white">RASEEL</h1>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Innovation Company</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">About</a>
+                    <a href="services.html" class="text-accent-500 dark:text-accent-400 font-medium">Services</a>
+                    <a href="projects.html" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Projects</a>
+                    <a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Theme Toggle & CTA -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                        <svg id="sun-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    
+                    <button class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Get Quote
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden pb-4">
-          <ul class="flex flex-col gap-2">
-            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="index.html#home">Home</a></li>
-            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="about.html">About</a></li>
-            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="services.html">Services</a></li>
-            <li><a class="block px-3 py-2 rounded hover:bg-black/5" href="projects.html">Projects</a></li>
-          </ul>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html#home" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Home</a>
+                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">About</a>
+                <a href="services.html" class="block text-accent-500 dark:text-accent-400 font-medium py-2">Services</a>
+                <a href="projects.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Projects</a>
+                <a href="index.html#contact" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Contact</a>
+            </div>
         </div>
-      </div>
     </header>
 
     <!-- Main Content -->
-    <main id="main-content">
-    <!-- Hero -->
-    <section class="pt-24 pb-12 bg-gradient-to-b from-accent/10 to-transparent">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-semibold animate-fade-in-up">Our Services</h1>
-        <p class="mt-3 text-text max-w-3xl animate-fade-in-up">Comprehensive Construction, Finishing, and Project Management Solutions</p>
-      </div>
-    </section>
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative py-20 bg-gradient-to-br from-accent-50 to-white dark:from-gray-900 dark:to-gray-800">
+            <div class="absolute inset-0 bg-gradient-to-r from-accent-100/20 to-transparent dark:from-accent-900/20"></div>
+            <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
+                    Our <span class="text-accent-500">Services</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up">
+                    Comprehensive Construction, Finishing, and Project Management Solutions
+                </p>
+                <div class="flex justify-center">
+                    <div class="w-24 h-1 bg-accent-500 rounded-full"></div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Intro -->
-    <section class="py-8 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-lg text-text text-center max-w-3xl mx-auto">Our work in collaboration with our architectural consulting office includes various civil and architectural services. This includes all completing finishing, designing and building concrete structures to completing mechanical, electrical and fire safety work. Additionally, we handle projects involving steel structures, shades, metal work and fencing.</p>
-      </div>
-    </section>
+        <!-- Intro Section -->
+        <section class="py-16 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Our work in collaboration with our architectural consulting office includes various civil and architectural services. This includes all completing finishing, designing and building concrete structures to completing mechanical, electrical and fire safety work. Additionally, we handle projects involving steel structures, shades, metal work and fencing.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Service Cards -->
-    <section class="py-16 bg-bg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
-          <h3 class="font-semibold text-lg">Construction & Structural Works</h3>
-          <p class="text-text mt-1">Complete construction solutions from foundation to completion.</p>
-          <ul class="mt-3 list-disc list-inside text-text space-y-1">
-            <li>Concrete structures and foundations</li>
-            <li>Steel structures and frameworks</li>
-            <li>Building construction and development</li>
-            <li>Infrastructure projects</li>
-          </ul>
-        </article>
-        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
-          <h3 class="font-semibold text-lg">Finishing Services</h3>
-          <p class="text-text mt-1">Premium interior and exterior finishes for modern, durable spaces.</p>
-          <ul class="mt-3 list-disc list-inside text-text space-y-1">
-            <li>Flooring, cladding, and painting</li>
-            <li>Joinery and fit-out solutions</li>
-            <li>Facade systems and exteriors</li>
-            <li>Decoration and redecorations</li>
-          </ul>
-        </article>
-        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
-          <h3 class="font-semibold text-lg">MEP & Safety Systems</h3>
-          <p class="text-text mt-1">Complete mechanical, electrical, and fire safety installations.</p>
-          <ul class="mt-3 list-disc list-inside text-text space-y-1">
-            <li>Mechanical systems installation</li>
-            <li>Electrical systems and wiring</li>
-            <li>Fire safety and protection systems</li>
-            <li>HVAC and ventilation</li>
-          </ul>
-        </article>
-        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
-          <h3 class="font-semibold text-lg">Specialized Construction</h3>
-          <p class="text-text mt-1">Specialized construction solutions for unique project requirements.</p>
-          <ul class="mt-3 list-disc list-inside text-text space-y-1">
-            <li>Metal work and fabrication</li>
-            <li>Shade structures and canopies</li>
-            <li>Fencing and security systems</li>
-            <li>Custom architectural elements</li>
-          </ul>
-        </article>
-        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
-          <h3 class="font-semibold text-lg">Project Management</h3>
-          <p class="text-text mt-1">End-to-end project delivery focused on time, cost, and quality.</p>
-          <ul class="mt-3 list-disc list-inside text-text space-y-1">
-            <li>Planning and scheduling</li>
-            <li>Cost control and procurement</li>
-            <li>Quality assurance and control</li>
-            <li>Stakeholder communication</li>
-          </ul>
-        </article>
-        <article class="reveal opacity-0 translate-y-6 bg-white p-6 rounded-lgx shadow-soft">
-          <h3 class="font-semibold text-lg">Architectural Consulting</h3>
-          <p class="text-text mt-1">Professional architectural design and consultation services.</p>
-          <ul class="mt-3 list-disc list-inside text-text space-y-1">
-            <li>Architectural design and planning</li>
-            <li>Interior design consultation</li>
-            <li>Project feasibility studies</li>
-            <li>Technical documentation</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+        <!-- Services Grid Section -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Construction & Structural Works -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
+                        <div class="w-16 h-16 bg-accent-100 dark:bg-accent-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Construction & Structural Works</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Complete construction solutions from foundation to completion.</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Concrete structures and foundations
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Steel structures and frameworks
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Building construction and development
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Infrastructure projects
+                            </li>
+                        </ul>
+                    </div>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-black/5 py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
-        <div>
-          <div class="flex flex-col leading-tight">
-            <span class="font-semibold tracking-widest">RASEEL</span>
-            <span class="text-xs text-text">Innovation Co.</span>
-          </div>
-          <p class="text-text mt-3">© <span id="year"></span> RASEEL Innovation Company for General Contracting. All rights reserved.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-3">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><a class="hover:text-accent" href="index.html#home">Home</a></li>
-            <li><a class="hover:text-accent" href="services.html">Services</a></li>
-            <li><a class="hover:text-accent" href="projects.html">Projects</a></li>
-            <li><a class="hover:text-accent" href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-3">Follow Us</h4>
-          <div class="flex gap-2">
-            <a href="#" aria-label="LinkedIn" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.5h4.38V20H4.75ZM13 8.5h4.2v1.56h.06a4.6 4.6 0 0 1 4.14-2.27c4.43 0 5.25 2.92 5.25 6.72V20h-4.38v-4.93c0-1.18 0-2.7-1.65-2.7s-1.9 1.29-1.9 2.62V20H13Z"/></svg>
-            </a>
-            <a href="https://instagram.com/RASEELINNOVATION" aria-label="Instagram" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2ZM17.4 6.6a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2Z"/><path fill="currentColor" d="M16.8 3H7.2A4.2 4.2 0 0 0 3 7.2v9.6A4.2 4.2 0 0 0 7.2 21h9.6A4.2 4.2 0 0 0 21 16.8V7.2A4.2 4.2 0 0 0 16.8 3Zm2.4 13.8a2.4 2.4 0 0 1-2.4 2.4H7.2a2.4 2.4 0 0 1-2.4-2.4V7.2a2.4 2.4 0 0 1 2.4-2.4h9.6a2.4 2.4 0 0 1 2.4 2.4Z"/></svg>
-            </a>
-            <a href="#" aria-label="X (Twitter)" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M18.244 2H21l-6.557 7.49L22 22h-6.828l-4.735-6.1L4.9 22H2.142l7.02-8.01L2 2h6.907l4.27 5.64L18.244 2Zm-1.196 18h1.818L7.03 4H5.103Z"/></svg>
-            </a>
-            <a href="#" aria-label="YouTube" class="inline-flex w-9 h-9 items-center justify-center rounded-full bg-bg text-primary hover:bg-accent hover:text-primary transition">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="w-5 h-5"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.4.6 9.4.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.5v-7L16 12Z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+                    <!-- Finishing Services -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
+                        <div class="w-16 h-16 bg-accent-100 dark:bg-accent-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Finishing Services</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Premium interior and exterior finishes for modern, durable spaces.</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Flooring, cladding, and painting
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Joinery and fit-out solutions
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Facade systems and exteriors
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Decoration and redecorations
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- MEP & Safety Systems -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
+                        <div class="w-16 h-16 bg-accent-100 dark:bg-accent-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">MEP & Safety Systems</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Complete mechanical, electrical, and fire safety installations.</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Mechanical systems installation
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Electrical systems and wiring
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Fire safety and protection systems
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                HVAC and ventilation
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Specialized Construction -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
+                        <div class="w-16 h-16 bg-accent-100 dark:bg-accent-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Specialized Construction</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Specialized construction solutions for unique project requirements.</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Metal work and fabrication
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Shade structures and canopies
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Fencing and security systems
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Custom architectural elements
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Project Management -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
+                        <div class="w-16 h-16 bg-accent-100 dark:bg-accent-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Project Management</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">End-to-end project delivery focused on time, cost, and quality.</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Planning and scheduling
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Cost control and procurement
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Quality assurance and control
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Stakeholder communication
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Architectural Consulting -->
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">
+                        <div class="w-16 h-16 bg-accent-100 dark:bg-accent-900/30 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Architectural Consulting</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Professional architectural design and consultation services.</p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Architectural design and planning
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Interior design consultation
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Project feasibility studies
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                                Technical documentation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-accent-500 to-accent-600">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+                <p class="text-xl text-accent-100 mb-8 max-w-2xl mx-auto">
+                    Let's discuss how we can bring your vision to life with our comprehensive construction services.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-accent-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Get Free Quote
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-accent-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script src="./script.js" defer></script>
-  </body>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-2xl">R</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">RASEEL</h3>
+                            <p class="text-accent-400 text-sm uppercase tracking-wider">Innovation Company</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Leading general contracting company specializing in innovative construction solutions, project management, and sustainable building practices.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.5h4.38V20H4.75ZM13 8.5h4.2v1.56h.06a4.6 4.6 0 0 1 4.14-2.27c4.43 0 5.25 2.92 5.25 6.72V20h-4.38v-4.93c0-1.18 0-2.7-1.65-2.7s-1.9 1.29-1.9 2.62V20H13Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/RASEELINNOVATION" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2ZM17.4 6.6a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2Z"/>
+                                <path d="M16.8 3H7.2A4.2 4.2 0 0 0 3 7.2v9.6A4.2 4.2 0 0 0 7.2 21h9.6A4.2 4.2 0 0 0 21 16.8V7.2A4.2 4.2 0 0 0 16.8 3Zm2.4 13.8a2.4 2.4 0 0 1-2.4 2.4H7.2a2.4 2.4 0 0 1-2.4-2.4V7.2a2.4 2.4 0 0 1 2.4-2.4h9.6a2.4 2.4 0 0 1 2.4 2.4Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2H21l-6.557 7.49L22 22h-6.828l-4.735-6.1L4.9 22H2.142l7.02-8.01L2 2h6.907l4.27 5.64L18.244 2Zm-1.196 18h1.818L7.03 4H5.103Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.4.6 9.4.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.5v-7L16 12Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#home" class="text-gray-300 hover:text-accent-400 transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-accent-400 transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-accent-400 transition-colors">Services</a></li>
+                        <li><a href="projects.html" class="text-gray-300 hover:text-accent-400 transition-colors">Projects</a></li>
+                        <li><a href="index.html#contact" class="text-gray-300 hover:text-accent-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <p>📍 Saudi Arabia</p>
+                        <p>📧 info@raseel.com</p>
+                        <p>📞 +966 XX XXX XXXX</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">© <span id="year"></span> RASEEL Innovation Company for General Contracting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
 </html>
 
 
