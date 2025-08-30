@@ -12,8 +12,17 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#d5ad65">
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS - Production Ready -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    
+    <!-- Fallback CSS for production -->
+    <style>
+        /* Fallback styles in case Tailwind fails to load */
+        .fallback-hidden { display: none; }
+        .fallback-block { display: block; }
+        .fallback-flex { display: flex; }
+        .fallback-grid { display: grid; }
+    </style>
     
     <!-- Tailwind Config -->
     <script>
@@ -377,35 +386,24 @@
     <script src="./projects-data.js"></script>
     <script src="./project-details.js"></script>
     <script>
-        // Debug: Check what's loaded
-        console.log('=== DEBUG INFO ===');
-        console.log('projects-data.js loaded:', typeof window.RASEEL_PROJECTS !== 'undefined');
-        console.log('project-details.js loaded:', typeof window.ProjectDetailsHandler !== 'undefined');
-        if (typeof window.RASEEL_PROJECTS !== 'undefined') {
-            console.log('Projects count:', window.RASEEL_PROJECTS.length);
-            console.log('First project:', window.RASEEL_PROJECTS[0]);
-        }
-
-
-
         // Initialize project details when everything is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, checking for projects data...');
+            console.log('RASEEL Project Page: Initializing...');
             // Wait a bit for all scripts to load
             setTimeout(() => {
                 if (window.ProjectDetailsHandler) {
-                    console.log('Initializing ProjectDetailsHandler...');
+                    console.log('RASEEL Project Page: ProjectDetailsHandler found, initializing...');
                     new window.ProjectDetailsHandler();
                 } else {
-                    console.error('ProjectDetailsHandler not found');
+                    console.error('RASEEL Project Page: ProjectDetailsHandler not found');
                     showErrorMessage('Project details handler not loaded');
                 }
-            }, 500); // Increased delay to ensure everything is loaded
+            }, 500);
 
             // Fallback: if projects data doesn't load after 5 seconds, show error
             setTimeout(() => {
                 if (typeof window.RASEEL_PROJECTS === 'undefined') {
-                    console.error('Projects data failed to load');
+                    console.error('RASEEL Project Page: Projects data failed to load');
                     showErrorMessage('Failed to load project data. Please refresh the page.');
                 }
             }, 5000);

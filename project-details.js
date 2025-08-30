@@ -7,7 +7,7 @@ class ProjectDetailsHandler {
     constructor() {
         // Prevent multiple initializations
         if (window.projectDetailsInitialized) {
-            console.log('ProjectDetailsHandler already initialized, skipping...');
+            console.log('RASEEL: ProjectDetailsHandler already initialized, skipping...');
             return;
         }
         
@@ -19,7 +19,7 @@ class ProjectDetailsHandler {
         this.meta = document.getElementById('meta');
         
         this.currentProject = null;
-        console.log('ProjectDetailsHandler initialized');
+        console.log('RASEEL: ProjectDetailsHandler initialized');
         
         // Mark as initialized
         window.projectDetailsInitialized = true;
@@ -28,7 +28,7 @@ class ProjectDetailsHandler {
     }
 
     init() {
-        console.log('Initializing ProjectDetailsHandler...');
+        console.log('RASEEL: Initializing ProjectDetailsHandler...');
         // Wait for projects data to be available
         this.waitForProjectsData();
     }
@@ -41,23 +41,45 @@ class ProjectDetailsHandler {
         
         this.waitingForData = true;
         
+        // Add timeout for data loading
+        const timeout = setTimeout(() => {
+            console.error('Timeout waiting for projects data');
+            this.showDataError();
+        }, 10000); // 10 second timeout
+        
         if (typeof window.RASEEL_PROJECTS !== 'undefined' && window.RASEEL_PROJECTS.length > 0) {
-            console.log('Projects data found, loading project details...');
+            clearTimeout(timeout);
+            console.log('RASEEL: Projects data found, loading project details...');
             this.loadProjectDetails();
             this.setupBackButton();
             this.setupRelatedProjects();
         } else {
-            console.log('Waiting for projects data...');
+            console.log('RASEEL: Waiting for projects data...');
             setTimeout(() => this.waitForProjectsData(), 100);
         }
     }
 
+    showDataError() {
+        console.error('RASEEL: Failed to load projects data after timeout');
+        const title = document.getElementById('title');
+        const category = document.getElementById('category');
+        const overview = document.getElementById('overview');
+        const scope = document.getElementById('scope');
+        const meta = document.getElementById('meta');
+
+        if (title) title.innerHTML = '<span class="text-red-500">Error: Failed to load project data</span>';
+        if (category) category.innerHTML = '<span class="text-red-400">Please refresh the page</span>';
+        if (overview) overview.innerHTML = '<span class="text-red-400">Unable to load project details</span>';
+        if (scope) scope.innerHTML = '<li class="text-red-400">Project data unavailable</li>';
+        if (meta) meta.innerHTML = '<div class="text-red-400">No project information available</div>';
+    }
+
     loadProjectDetails() {
         const slug = this.getProjectSlug();
-        console.log('Loading project with slug:', slug);
+        console.log('RASEEL: Loading project with slug:', slug);
         
         if (!slug) {
-            console.warn('No slug found, redirecting to projects page');
+            console.warn('RASEEL: No slug found, redirecting to projects page');
             this.redirectToProjects();
             return;
         }
@@ -66,14 +88,14 @@ class ProjectDetailsHandler {
         this.currentProject = window.RASEEL_PROJECTS.find(p => p.slug === slug);
         
         if (!this.currentProject) {
-            console.error('Project not found for slug:', slug);
-            console.log('Available projects:', window.RASEEL_PROJECTS);
-            console.log('Available slugs:', window.RASEEL_PROJECTS.map(p => p.slug));
+            console.error('RASEEL: Project not found for slug:', slug);
+            console.log('RASEEL: Available projects:', window.RASEEL_PROJECTS.length);
+            console.log('RASEEL: Available slugs:', window.RASEEL_PROJECTS.map(p => p.slug));
             this.redirectToProjects();
             return;
         }
 
-        console.log('Project found:', this.currentProject);
+        console.log('RASEEL: Project found:', this.currentProject.title);
         this.populateProjectDetails();
         this.updatePageTitle();
         this.updateMetaTags();
@@ -87,26 +109,36 @@ class ProjectDetailsHandler {
     populateProjectDetails() {
         if (!this.currentProject) return;
 
-        console.log('Populating project details...');
+        console.log('RASEEL: Populating project details...');
 
         // Hero image
         if (this.heroImage && !this.heroImage.dataset.populated) {
-            this.heroImage.src = this.currentProject.image;
+            // Set fallback image first
+            const fallbackImage = 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1200&auto=format&fit=crop';
+            
+            // Add error handling for image loading
+            this.heroImage.onerror = () => {
+                console.warn('RASEEL: Failed to load project image, using fallback');
+                this.heroImage.src = fallbackImage;
+            };
+            
+            // Try to load the project image
+            this.heroImage.src = this.currentProject.image || fallbackImage;
             this.heroImage.alt = `${this.currentProject.title} - Project Image`;
             this.heroImage.dataset.populated = 'true';
-            console.log('Set hero image:', this.currentProject.image);
+            console.log('RASEEL: Set hero image:', this.currentProject.image);
         }
 
         // Title and category
         if (this.title && !this.title.dataset.populated) {
             this.title.textContent = this.currentProject.title;
             this.title.dataset.populated = 'true';
-            console.log('Set title:', this.currentProject.title);
+            console.log('RASEEL: Set title:', this.currentProject.title);
         }
         if (this.category && !this.category.dataset.populated) {
             this.category.textContent = this.currentProject.category;
             this.category.dataset.populated = 'true';
-            console.log('Set category:', this.currentProject.category);
+            console.log('RASEEL: Set category:', this.currentProject.category);
         }
 
         // Overview
@@ -114,7 +146,7 @@ class ProjectDetailsHandler {
             this.overview.textContent = this.currentProject.description || 
                 `RASEEL Innovation delivered ${this.currentProject.title} with high-quality standards, focusing on schedule, cost, and safety. Our team of experienced professionals ensured every aspect of the project met the highest industry standards.`;
             this.overview.dataset.populated = 'true';
-            console.log('Set overview');
+            console.log('RASEEL: Set overview');
         }
 
         // Scope of work
@@ -133,7 +165,7 @@ class ProjectDetailsHandler {
                 </li>`
             ).join('');
             this.scope.dataset.populated = 'true';
-            console.log('Set scope with', scopeItems.length, 'items');
+            console.log('RASEEL: Set scope with', scopeItems.length, 'items');
         }
 
         // Project meta information
@@ -154,7 +186,7 @@ class ProjectDetailsHandler {
                 </div>`
             ).join('');
             this.meta.dataset.populated = 'true';
-            console.log('Set meta information');
+            console.log('RASEEL: Set meta information');
         }
     }
 
@@ -281,7 +313,7 @@ class ProjectDetailsHandler {
     }
 
     redirectToProjects() {
-        console.warn('Project not found, redirecting to projects page');
+        console.warn('RASEEL: Project not found, redirecting to projects page');
         window.location.href = 'projects.html';
     }
 }

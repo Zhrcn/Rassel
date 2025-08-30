@@ -1,158 +1,74 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - RASEEL Innovation Company</title>
-    <meta name="description" content="Explore RASEEL Innovation Company's recent projects and case studies.">
-    <meta property="og:title" content="Projects - RASEEL Innovation Company">
-    <meta property="og:description" content="Recent projects and case studies.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#d5ad65">
+    <meta name="description" content="Explore RASEEL Innovation Company's portfolio of successful construction projects across Saudi Arabia.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Tailwind Config -->
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: {
-                            50: '#f7fafc',
-                            100: '#edf2f7',
-                            200: '#e2e8f0',
-                            300: '#cbd5e0',
-                            400: '#a0aec0',
-                            500: '#718096',
-                            600: '#4a5568',
-                            700: '#2d3748',
-                            800: '#1a202c',
-                            900: '#171923'
-                        },
-                        accent: {
-                            50: '#fef7e0',
-                            100: '#fdecc8',
-                            200: '#fbd691',
-                            300: '#f8c25a',
-                            400: '#f5ad23',
-                            500: '#d5ad65',
-                            600: '#b8944d',
-                            700: '#9b7b35',
-                            800: '#7e621d',
-                            900: '#614905'
-                        }
+                        primary: '#1e40af',
+                        accent: '#d5ad65',
+                        'accent-light': '#f5ad23',
+                        'accent-dark': '#b8944d'
                     },
                     fontFamily: {
-                        'sans': ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
-                        'serif': ['Playfair Display', 'Georgia', 'serif']
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out both',
-                        'slide-in-left': 'slideInLeft 0.8s ease-out both',
-                        'slide-in-right': 'slideInRight 0.8s ease-out both'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(213, 173, 101, 0.4)' },
-                            '50%': { boxShadow: '0 0 40px rgba(213, 173, 101, 0.8)' }
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(30px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        }
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
                     }
                 }
             }
         }
     </script>
     
-    <!-- Custom CSS for additional styles -->
     <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e0;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a0aec0;
+        /* Custom Styles */
+        .hero-gradient {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
         }
         
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
+        .project-card {
+            transition: all 0.3s ease;
         }
         
-        /* Smooth transitions */
-        * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         
-        /* Focus styles */
-        .focus-ring:focus {
-            outline: 2px solid #d5ad65;
-            outline-offset: 2px;
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         
-        /* Custom animations */
-        .hover-lift:hover {
-            transform: translateY(-4px);
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
         }
         
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .dark .glass {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+<body class="bg-gray-50 font-sans">
     <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200 dark:bg-gray-900/95 dark:border-gray-700 transition-all duration-300">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Brand -->
-                <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center">
+    <header class="bg-white dark:bg-gray-900 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">
                         <span class="text-white font-bold text-xl">R</span>
                     </div>
                     <div>
@@ -163,16 +79,16 @@
                 
                 <!-- Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html#home" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">About</a>
-                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Services</a>
-                    <a href="projects.html" class="text-accent-500 dark:text-accent-400 font-medium">Projects</a>
-                    <a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Contact</a>
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-accent font-medium transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-accent font-medium transition-colors">About</a>
+                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-accent font-medium transition-colors">Services</a>
+                    <a href="projects.html" class="text-accent dark:text-accent font-semibold">Projects</a>
+                    <a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-accent font-medium transition-colors">Contact</a>
                 </nav>
                 
-                <!-- Theme Toggle & CTA -->
+                <!-- Theme Toggle & CTA Button -->
                 <div class="flex items-center space-x-4">
-                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle theme">
                         <svg id="sun-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
@@ -180,13 +96,12 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
                         </svg>
                     </button>
-                    
-                    <button class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <button class="bg-accent hover:bg-accent-dark text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:shadow-lg">
                         Get Quote
                     </button>
                 </div>
                 
-                <!-- Mobile Menu Button -->
+                <!-- Mobile menu button -->
                 <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                     <svg class="w-6 h-6 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -197,174 +112,139 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-            <div class="px-4 py-6 space-y-4">
-                <a href="index.html#home" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Home</a>
-                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">About</a>
-                <a href="services.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Services</a>
-                <a href="projects.html" class="block text-accent-500 dark:text-accent-400 font-medium py-2">Projects</a>
-                <a href="index.html#contact" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Contact</a>
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent font-medium py-2">Home</a>
+                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent font-medium py-2">About</a>
+                <a href="services.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent font-medium py-2">Services</a>
+                <a href="projects.html" class="block text-accent dark:text-accent font-semibold py-2">Projects</a>
+                <a href="index.html#contact" class="block text-gray-700 dark:text-gray-300 hover:text-accent font-medium py-2">Contact</a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="pt-16">
-        <!-- Hero Section -->
-        <section class="relative py-20 bg-gradient-to-br from-accent-50 to-white dark:from-gray-900 dark:to-gray-800">
-            <div class="absolute inset-0 bg-gradient-to-r from-accent-100/20 to-transparent dark:from-accent-900/20"></div>
-            <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 animate-fade-in-up">
-                    Our <span class="text-accent-500">Projects</span>
-                </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in-up">
-                    A selection of our recent work showcasing excellence in construction and innovation
-                </p>
-                <div class="flex justify-center">
-                    <div class="w-24 h-1 bg-accent-500 rounded-full"></div>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                Our <span class="text-accent">Projects</span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+                Discover our portfolio of successful construction projects across Saudi Arabia, showcasing innovation, quality, and excellence in every build.
+            </p>
+            <div class="w-24 h-1 bg-accent rounded-full mx-auto"></div>
+        </div>
+    </section>
 
-        <!-- Search and Filter Section -->
-        <section class="py-16 bg-white dark:bg-gray-900">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
-                    <div class="grid md:grid-cols-2 gap-6 mb-6">
-                        <div class="relative">
-                            <input 
-                                type="text" 
-                                id="project-search" 
-                                placeholder="Search projects..." 
-                                class="w-full px-4 py-3 pl-12 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                            />
-                            <svg class="absolute left-4 top-3.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </div>
-                        <select id="category-filter" class="px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 transition-all bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
-                            <option value="">All Categories</option>
-                            <option value="Commercial">Commercial</option>
-                            <option value="Industrial">Industrial</option>
-                            <option value="F&B">Food & Beverage</option>
-                            <option value="Retail">Retail</option>
-                            <option value="Infrastructure">Infrastructure</option>
-                            <option value="Government">Government</option>
-                            <option value="Urban Development">Urban Development</option>
-                        </select>
-                    </div>
-                    <div class="flex flex-wrap gap-2" id="filter-tags">
-                        <!-- Filter tags will be inserted here -->
-                    </div>
+    <!-- Projects Stats -->
+    <section class="bg-white dark:bg-gray-900 py-12 border-b dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-accent" id="projects-count">22</div>
+                    <div class="text-gray-600 dark:text-gray-300">Completed Projects</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-accent">8</div>
+                    <div class="text-gray-600 dark:text-gray-300">Categories</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-accent">15+</div>
+                    <div class="text-gray-600 dark:text-gray-300">Years Experience</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-accent">100%</div>
+                    <div class="text-gray-600 dark:text-gray-300">Client Satisfaction</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Project Grid Section -->
-        <section class="py-16 bg-gray-50 dark:bg-gray-800">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-8 flex justify-between items-center">
-                    <div>
-                        <span id="results-count" class="text-gray-600 dark:text-gray-400 text-lg">Loading projects...</span>
-                    </div>
-                    <div class="flex gap-2">
-                        <button id="grid-view" class="p-2 rounded-lg bg-accent-500 text-white transition-all hover:bg-accent-600" aria-label="Grid view">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm8 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V4zM3 12a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1v-4zm8 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <button id="list-view" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 transition-all hover:bg-gray-300 dark:hover:bg-gray-600" aria-label="List view">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </div>
+    <!-- Filter Section -->
+    <section class="bg-white dark:bg-gray-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active px-4 py-2 rounded-full bg-accent text-white font-medium" data-category="all">All Projects</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium" data-category="Commercial">Commercial</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium" data-category="F&B">F&B</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium" data-category="Retail">Retail</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium" data-category="Industrial">Industrial</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium" data-category="Government">Government</button>
                 </div>
-                
-                <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500">
-                    <!-- Project cards will be dynamically inserted here -->
-                </div>
-                
-                <div id="no-results" class="hidden text-center py-16">
-                    <div class="text-gray-400 dark:text-gray-500 mb-6">
-                        <svg class="mx-auto w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-gray-600 dark:text-gray-400 mb-4">No projects found</h3>
-                    <p class="text-gray-500 dark:text-gray-500">Try adjusting your search terms or filters</p>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-600 dark:text-gray-300" id="results-count">Loading projects...</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="py-20 bg-gradient-to-r from-accent-500 to-accent-600">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
-                <p class="text-xl text-accent-100 mb-8 max-w-2xl mx-auto">
-                    Let's discuss how we can bring your vision to life with our proven track record of excellence.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button class="bg-white text-accent-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                        Get Free Quote
-                    </button>
-                    <button class="border-2 border-white text-white hover:bg-white hover:text-accent-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300">
-                        Contact Us
-                    </button>
+    <!-- Projects Grid -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be loaded here -->
+                <div class="col-span-full text-center py-12">
+                    <div class="animate-spin w-8 h-8 border-4 border-accent border-t-transparent rounded-full mx-auto mb-4"></div>
+                    <p class="text-gray-600 dark:text-gray-300">Loading projects...</p>
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <!-- No Results -->
+            <div id="no-results" class="hidden text-center py-16">
+                <svg class="w-16 h-16 text-gray-400 dark:text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No projects found</h3>
+                <p class="text-gray-600 dark:text-gray-300">Try selecting a different category</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-accent to-accent-dark py-20 dark:from-accent-dark dark:to-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Start Your Project?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Let's bring your vision to life with our proven expertise and commitment to excellence.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-accent hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all">
+                    Get Free Quote
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white hover:text-accent px-8 py-3 rounded-lg font-semibold transition-all">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-accent to-accent-dark rounded-xl flex items-center justify-center">
                             <span class="text-white font-bold text-2xl">R</span>
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold">RASEEL</h3>
-                            <p class="text-accent-400 text-sm uppercase tracking-wider">Innovation Company</p>
+                            <p class="text-accent text-sm uppercase tracking-wider">Innovation Company</p>
                         </div>
                     </div>
                     <p class="text-gray-300 mb-6 max-w-md">
-                        Leading general contracting company specializing in innovative construction solutions, project management, and sustainable building practices.
+                        Leading general contracting company specializing in innovative construction solutions and project management across Saudi Arabia.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M6.94 6.5A2.44 2.44 0 1 1 4.5 4.06 2.44 2.44 0 0 1 6.94 6.5ZM4.75 8.5h4.38V20H4.75ZM13 8.5h4.2v1.56h.06a4.6 4.6 0 0 1 4.14-2.27c4.43 0 5.25 2.92 5.25 6.72V20h-4.38v-4.93c0-1.18 0-2.7-1.65-2.7s-1.9 1.29-1.9 2.62V20H13Z"/>
-                            </svg>
-                        </a>
-                        <a href="https://instagram.com/RASEELINNOVATION" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 7a5 5 0 1 0 5 5 5 5 0 0 0-5-5Zm0 8.2A3.2 3.2 0 1 1 15.2 12 3.2 3.2 0 0 1 12 15.2ZM17.4 6.6a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2Z"/>
-                                <path d="M16.8 3H7.2A4.2 4.2 0 0 0 3 7.2v9.6A4.2 4.2 0 0 0 7.2 21h9.6A4.2 4.2 0 0 0 21 16.8V7.2A4.2 4.2 0 0 0 16.8 3Zm2.4 13.8a2.4 2.4 0 0 1-2.4 2.4H7.2a2.4 2.4 0 0 1-2.4-2.4V7.2a2.4 2.4 0 0 1 2.4-2.4h9.6a2.4 2.4 0 0 1 2.4 2.4Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M18.244 2H21l-6.557 7.49L22 22h-6.828l-4.735-6.1L4.9 22H2.142l7.02-8.01L2 2h6.907l4.27 5.64L18.244 2Zm-1.196 18h1.818L7.03 4H5.103Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-accent-500 rounded-lg flex items-center justify-center transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.8 3.5 12 3.5 12 3.5s-7.8 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.6.6 9.4.6 9.4.6s7.8 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.5v-7L16 12Z"/>
-                            </svg>
-                        </a>
-                    </div>
                 </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html#home" class="text-gray-300 hover:text-accent-400 transition-colors">Home</a></li>
-                        <li><a href="about.html" class="text-gray-300 hover:text-accent-400 transition-colors">About</a></li>
-                        <li><a href="services.html" class="text-gray-300 hover:text-accent-400 transition-colors">Services</a></li>
-                        <li><a href="projects.html" class="text-gray-300 hover:text-accent-400 transition-colors">Projects</a></li>
-                        <li><a href="index.html#contact" class="text-gray-300 hover:text-accent-400 transition-colors">Contact</a></li>
+                        <li><a href="index.html" class="text-gray-300 hover:text-accent transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-accent transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="projects.html" class="text-gray-300 hover:text-accent transition-colors">Projects</a></li>
+                        <li><a href="index.html#contact" class="text-gray-300 hover:text-accent transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -379,33 +259,184 @@
             </div>
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">© <span id="year"></span> RASEEL Innovation Company for General Contracting. All rights reserved.</p>
+                <p class="text-gray-400">© 2024 RASEEL Innovation Company for General Contracting. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="./projects-data.js"></script>
     <script>
-        (function () {
-            'use strict';
-            var container = document.getElementById('project-grid');
-            var items = (window.RASEEL_PROJECTS || []).map(function (p) {
-                var href = 'project.html?slug=' + encodeURIComponent(p.slug);
-                return (
-                    '<a href="' + href + '" class="group block bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover-lift">' +
-                        '<img class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" src="' + p.image + '" alt="' + (p.title || 'Project') + '" />' +
-                        '<div class="p-6">' +
-                            '<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">' + (p.title || '') + '</h3>' +
-                            '<p class="text-gray-600 dark:text-gray-400">' + (p.category || 'General Contracting') + '</p>' +
-                        '</div>' +
-                    '</a>'
-                );
-            }).join('');
-            if (container) container.innerHTML = items;
-        })();
+        class ProjectsPage {
+            constructor() {
+                this.currentFilter = 'all';
+                this.projects = [];
+                this.init();
+            }
+
+            init() {
+                console.log('🚀 Initializing Projects Page...');
+                this.waitForData();
+                this.setupEventListeners();
+            }
+
+            waitForData() {
+                if (window.RASEEL_PROJECTS && window.RASEEL_PROJECTS.length > 0) {
+                    console.log('✅ Projects data loaded:', window.RASEEL_PROJECTS.length, 'projects');
+                    this.projects = window.RASEEL_PROJECTS;
+                    this.renderProjects();
+                    this.updateStats();
+                } else {
+                    console.log('⏳ Waiting for projects data...');
+                    setTimeout(() => this.waitForData(), 100);
+                }
+            }
+
+            setupEventListeners() {
+                // Filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const category = e.target.dataset.category;
+                        this.filterProjects(category);
+                        this.updateFilterButtons(e.target);
+                    });
+                });
+
+                // Mobile menu
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                if (mobileMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
+            }
+
+            filterProjects(category) {
+                this.currentFilter = category;
+                this.renderProjects();
+            }
+
+            updateFilterButtons(activeBtn) {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-accent', 'text-white');
+                    btn.classList.add('bg-gray-100', 'text-gray-700');
+                });
+                
+                activeBtn.classList.add('active', 'bg-accent', 'text-white');
+                activeBtn.classList.remove('bg-gray-100', 'text-gray-700');
+            }
+
+            getFilteredProjects() {
+                if (this.currentFilter === 'all') {
+                    return this.projects;
+                }
+                
+                return this.projects.filter(project => {
+                    return project.category.includes(this.currentFilter);
+                });
+            }
+
+            renderProjects() {
+                const grid = document.getElementById('projects-grid');
+                const noResults = document.getElementById('no-results');
+                const resultsCount = document.getElementById('results-count');
+                
+                if (!grid) return;
+
+                const filteredProjects = this.getFilteredProjects();
+                
+                // Update results count
+                if (resultsCount) {
+                    resultsCount.textContent = `${filteredProjects.length} project${filteredProjects.length !== 1 ? 's' : ''}`;
+                }
+
+                if (filteredProjects.length === 0) {
+                    grid.innerHTML = '';
+                    if (noResults) noResults.classList.remove('hidden');
+                    return;
+                }
+
+                if (noResults) noResults.classList.add('hidden');
+
+                // Generate project cards
+                const projectsHTML = filteredProjects.map((project, index) => {
+                    return this.createProjectCard(project, index);
+                }).join('');
+
+                grid.innerHTML = projectsHTML;
+
+                // Add fade-in animation
+                setTimeout(() => {
+                    grid.querySelectorAll('.project-card').forEach(card => {
+                        card.classList.add('fade-in');
+                    });
+                }, 50);
+            }
+
+            createProjectCard(project, index) {
+                const href = `project.html?slug=${encodeURIComponent(project.slug)}`;
+                
+                return `
+                    <div class="project-card bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group">
+                        <a href="${href}" class="block">
+                            <div class="relative overflow-hidden">
+                                <img 
+                                    src="${project.image}" 
+                                    alt="${project.title}"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                                    loading="lazy"
+                                    onerror="this.src='https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=800&auto=format&fit=crop'"
+                                />
+                                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full">
+                                    <span class="text-sm font-medium text-gray-800">${project.category}</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                                    ${project.title}
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300 mb-3 flex items-center">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    ${project.location}
+                                </p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-2 mb-4">${project.description}</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-accent font-semibold">${project.year}</span>
+                                    <svg class="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            }
+
+            updateStats() {
+                const projectsCountEl = document.getElementById('projects-count');
+                if (projectsCountEl) {
+                    projectsCountEl.textContent = this.projects.length;
+                }
+            }
+        }
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new ProjectsPage();
+        });
+
+        // Fallback initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => new ProjectsPage());
+        } else {
+            new ProjectsPage();
+        }
     </script>
-    <script src="./script.js"></script>
 </body>
+<script src="./script.js"></script>
 </html>
-
-
