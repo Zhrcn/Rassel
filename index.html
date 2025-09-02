@@ -241,7 +241,14 @@
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
+                <div class="relative order-2 lg:order-1">
+                    <!-- Carousel is now in front (z-10), overlay moved behind (z-0) -->
+                    <div id="carousel-effect" class="w-full h-96 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center relative z-10">
+                        <img id="carousel-image" src="./images/carousel/car1.jpg" alt="Carousel Slide" class="w-full h-full object-cover rounded-2xl transition-opacity duration-700 opacity-100" />
+                    </div>
+                    <div class="absolute inset-0 pointer-events-none bg-gradient-to-br from-accent-400 to-accent-500 rounded-2xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500 z-0"></div>
+                </div>
+                <div class="space-y-6 order-1 lg:order-2">
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Excellence in Every Project</h3>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         With over a decade of experience in the construction industry, RASEEL has established itself as a trusted partner for clients seeking quality, innovation, and reliability in their construction projects.
@@ -257,11 +264,63 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <div class="w-full h-96 bg-gradient-to-br from-accent-400 to-accent-600 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"></div>
-                    <div class="absolute inset-0 bg-gradient-to-br from-accent-400 to-accent-600 rounded-2xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500"></div>
-                </div>
             </div>
+            <script>
+                // Carousel image paths (add or remove as needed)
+                const carouselImages = [
+                    "./images/carousel/car1.jpg",
+                    "./images/carousel/car2.jpg",
+                    "./images/carousel/car3.jpg",
+                    "./images/carousel/car4.jpg",
+                    "./images/carousel/car5.jpg",
+                    "./images/carousel/car6.jpg",
+                    "./images/carousel/car7.jpg",
+                    "./images/carousel/car8.jpg",
+                    "./images/carousel/car9.jpg",
+                    "./images/carousel/car10.jpg",
+                    "./images/carousel/car11.jpg",
+                    "./images/carousel/car12.jpg",
+                    "./images/carousel/car13.jpg",
+                    "./images/carousel/car14.jpg",
+                    "./images/carousel/car15.jpg",
+                    "./images/carousel/car16.jpg",
+                    "./images/carousel/car17.jpg",
+                    "./images/carousel/car18.jpg",
+                    "./images/carousel/car19.jpg",
+                    "./images/carousel/car20.jpg",
+                    "./images/carousel/car21.jpg",
+                    "./images/carousel/car22.jpg",
+                    "./images/carousel/car23.jpeg",
+                    "./images/carousel/car24.jpg", 
+                    "./images/carousel/car25.jpg",
+                    "./images/carousel/car26.jpg",
+                    "./images/carousel/car27.jpg",
+                    "./images/carousel/car28.jpg",
+                    "./images/carousel/car29.jpeg",
+                    "./images/carousel/car30.jpg",
+                    "./images/carousel/car31.jpg",
+                    "./images/carousel/car32.jpg",
+                    "./images/carousel/car33.jpeg",
+                    "./images/carousel/car34.jpeg",
+                    "./images/carousel/car35.jpeg",
+                    "./images/carousel/car36.jpeg",
+                    "./images/carousel/car37.jpeg",
+                    "./images/carousel/car38.jpeg",
+                    "./images/carousel/car39.jpeg",
+                ];
+                let carouselIndex = 0;
+                const carouselImg = document.getElementById('carousel-image');
+                setInterval(() => {
+                    carouselIndex = (carouselIndex + 1) % carouselImages.length;
+                    // Fade out
+                    carouselImg.style.opacity = 0;
+                    setTimeout(() => {
+                        carouselImg.src = carouselImages[carouselIndex];
+                        // Fade in
+                        carouselImg.style.opacity = 1;
+                    }, 600);
+                }, 3000);
+            </script>
         </div>
     </section>
 

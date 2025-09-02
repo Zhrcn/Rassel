@@ -111,22 +111,10 @@ class ProjectDetailsHandler {
 
         console.log('RASEEL: Populating project details...');
 
-        // Hero image
+        // Hero image carousel
         if (this.heroImage && !this.heroImage.dataset.populated) {
-            // Set fallback image first
-            const fallbackImage = 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1200&auto=format&fit=crop';
-            
-            // Add error handling for image loading
-            this.heroImage.onerror = () => {
-                console.warn('RASEEL: Failed to load project image, using fallback');
-                this.heroImage.src = fallbackImage;
-            };
-            
-            // Try to load the project image
-            this.heroImage.src = this.currentProject.image || fallbackImage;
-            this.heroImage.alt = `${this.currentProject.title} - Project Image`;
+            this.renderImageCarousel();
             this.heroImage.dataset.populated = 'true';
-            console.log('RASEEL: Set hero image:', this.currentProject.image);
         }
 
         // Title and category
@@ -315,6 +303,58 @@ class ProjectDetailsHandler {
     redirectToProjects() {
         console.warn('RASEEL: Project not found, redirecting to projects page');
         window.location.href = 'projects.html';
+    }
+
+    // Add a new method for rendering the image carousel
+    renderImageCarousel() {
+        const images = this.currentProject.images || [this.currentProject.cover];
+        const heroDiv = document.getElementById('hero');
+        if (!heroDiv || !images.length) return;
+
+        // Create carousel container
+        const carousel = document.createElement('div');
+        carousel.className = 'relative w-full';
+        carousel.innerHTML = `
+            <div id="carousel-images" class="relative w-full overflow-hidden rounded-2xl aspect-[16/9]">
+                ${images.map((img, idx) => `
+                    <img src="${img}" data-idx="${idx}" class="carousel-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}" alt="Project Image ${idx+1}" />
+                `).join('')}
+            </div>
+            <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-900/80 rounded-full p-2 shadow hover:bg-accent-500 hover:text-white transition-all z-20"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+            <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-900/80 rounded-full p-2 shadow hover:bg-accent-500 hover:text-white transition-all z-20"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                ${images.map((_, idx) => `<span class="carousel-dot w-3 h-3 rounded-full bg-white border border-accent-500 ${idx === 0 ? 'bg-accent-500' : 'bg-white/70'} cursor-pointer transition-all"></span>`).join('')}
+            </div>
+        `;
+        heroDiv.innerHTML = '';
+        heroDiv.appendChild(carousel);
+
+        // Carousel logic
+        let current = 0;
+        const slides = heroDiv.querySelectorAll('.carousel-slide');
+        const dots = heroDiv.querySelectorAll('.carousel-dot');
+        const showSlide = idx => {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('opacity-100', i === idx);
+                slide.classList.toggle('z-10', i === idx);
+                slide.classList.toggle('opacity-0', i !== idx);
+                slide.classList.toggle('z-0', i !== idx);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-accent-500', i === idx);
+                dot.classList.toggle('bg-white/70', i !== idx);
+            });
+            current = idx;
+        };
+        heroDiv.querySelector('#carousel-prev').onclick = () => {
+            showSlide((current - 1 + slides.length) % slides.length);
+        };
+        heroDiv.querySelector('#carousel-next').onclick = () => {
+            showSlide((current + 1) % slides.length);
+        };
+        dots.forEach((dot, idx) => {
+            dot.onclick = () => showSlide(idx);
+        });
     }
 }
 
