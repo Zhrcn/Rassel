@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RASEEL Innovation Company - General Contracting Excellence</title>
-    <meta name="description" content="Leading general contracting company specializing in innovative construction solutions, project management, and sustainable building practices.">
+    <title>RASEEL Innovation Company - Building Communities of Excellence</title>
+    <meta name="description" content="Leading real estate development company specializing in innovative communities, sustainable building practices, and exceptional living experiences across Saudi Arabia.">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind Config -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
                         primary: {
-                            50: '#f7fafc',
-                            100: '#edf2f7',
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
                             200: '#e2e8f0',
-                            300: '#cbd5e0',
-                            400: '#a0aec0',
-                            500: '#718096',
-                            600: '#4a5568',
-                            700: '#2d3748',
-                            800: '#1a202c',
-                            900: '#171923'
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
                         },
                         accent: {
                             50: '#fef7e0',
@@ -42,36 +47,36 @@
                         }
                     },
                     fontFamily: {
-                        'sans': ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
                         'serif': ['Playfair Display', 'Georgia', 'serif']
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
                         'fade-in-up': 'fadeInUp 0.8s ease-out both',
                         'slide-in-left': 'slideInLeft 0.8s ease-out both',
-                        'slide-in-right': 'slideInRight 0.8s ease-out both'
+                        'slide-in-right': 'slideInRight 0.8s ease-out both',
+                        'scale-in': 'scaleIn 0.6s ease-out both'
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(213, 173, 101, 0.4)' },
-                            '50%': { boxShadow: '0 0 40px rgba(213, 173, 101, 0.8)' }
+                            '50%': { transform: 'translateY(-20px)' }
                         },
                         fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '0%': { opacity: '0', transform: 'translateY(60px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
                         },
                         slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
+                            '0%': { opacity: '0', transform: 'translateX(-60px)' },
                             '100%': { opacity: '1', transform: 'translateX(0)' }
                         },
                         slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '0%': { opacity: '0', transform: 'translateX(60px)' },
                             '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
                         }
                     }
                 }
@@ -79,8 +84,13 @@
         }
     </script>
     
-    <!-- Custom CSS for additional styles -->
+    <!-- Custom CSS -->
     <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -89,26 +99,16 @@
             background: #f1f5f9;
         }
         ::-webkit-scrollbar-thumb {
-            background: #cbd5e0;
+            background: #d5ad65;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #a0aec0;
-        }
-        
-        .dark ::-webkit-scrollbar-track {
-            background: #1e293b;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        .dark ::-webkit-scrollbar-thumb:hover {
-            background: #64748b;
+            background: #b8944d;
         }
         
         /* Smooth transitions */
         * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         /* Focus styles */
@@ -117,9 +117,9 @@
             outline-offset: 2px;
         }
         
-        /* Custom animations */
+        /* Hover effects */
         .hover-lift:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
         }
         
         .hover-scale:hover {
@@ -133,10 +133,24 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .dark .glass {
-            background: rgba(15, 23, 42, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #d5ad65 0%, #f5ad23 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+        
+        /* Floating animation */
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Staggered animation delays */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
@@ -158,22 +172,19 @@
                 <!-- Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">About</a>
-                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Services</a>
-                    <a href="projects.html" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Projects</a>
+                    <a href="#communities" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Communities</a>
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">About</a>
+                    <a href="#investor" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Investor</a>
                     <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium transition-colors">Contact</a>
                 </nav>
                 
-                <!-- Theme Toggle & CTA -->
+                <!-- Language Switcher & CTA -->
                 <div class="flex items-center space-x-4">
-                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-                        <svg id="sun-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                        <svg id="moon-icon" class="w-5 h-5 text-gray-700 dark:text-gray-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                        </svg>
-                    </button>
+                    <!-- Language Switcher -->
+                    <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+                        <button class="px-3 py-1 text-sm font-medium text-accent-600 bg-white dark:bg-gray-700 rounded-md shadow-sm">EN</button>
+                        <button class="px-3 py-1 text-sm font-medium text-gray-500 hover:text-accent-600 transition-colors">العربية</button>
+                    </div>
                     
                     <button class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                         Get Quote
@@ -193,26 +204,26 @@
         <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
             <div class="px-4 py-6 space-y-4">
                 <a href="#home" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Home</a>
-                <a href="about.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">About</a>
-                <a href="services.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Services</a>
-                <a href="projects.html" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Projects</a>
+                <a href="#communities" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Communities</a>
+                <a href="#about" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">About</a>
+                <a href="#investor" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Investor</a>
                 <a href="#contact" class="block text-gray-700 dark:text-gray-300 hover:text-accent-500 dark:hover:text-accent-400 font-medium py-2 transition-colors">Contact</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800" data-aos="fade-up">
         <div class="absolute inset-0 bg-gradient-to-r from-accent-500/10 to-transparent"></div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight animate-fade-in-up">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight animate-fade-in-up" data-aos="fade-up" data-aos-delay="200">
                 Building the Future with
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-500 to-accent-600">Innovation</span>
             </h1>
-            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+            <p class="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;" data-aos="fade-up" data-aos-delay="400">
                 Leading general contracting company specializing in innovative construction solutions, sustainable building practices, and exceptional project delivery.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.4s;">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style="animation-delay: 0.4s;" data-aos="fade-up" data-aos-delay="600">
                 <a href="#contact" class="bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-2 inline-block text-center">
                     Start Your Project
                 </a>
@@ -223,15 +234,15 @@
         </div>
         
         <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-20 h-20 bg-accent-500/20 rounded-full animate-float"></div>
-        <div class="absolute top-40 right-20 w-16 h-16 bg-accent-400/30 rounded-full animate-float" style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-40 left-20 w-24 h-24 bg-accent-300/25 rounded-full animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute top-20 left-10 w-20 h-20 bg-accent-500/20 rounded-full animate-float" data-aos="fade-in" data-aos-delay="800"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-accent-400/30 rounded-full animate-float" style="animation-delay: 1s;" data-aos="fade-in" data-aos-delay="1000"></div>
+        <div class="absolute bottom-40 left-20 w-24 h-24 bg-accent-300/25 rounded-full animate-float" style="animation-delay: 2s;" data-aos="fade-in" data-aos-delay="1200"></div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white dark:bg-gray-900">
+    <section id="about" class="py-20 bg-white dark:bg-gray-900" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                     About <span class="text-accent-500">RASEEL</span>
                 </h2>
@@ -241,24 +252,24 @@
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="relative order-2 lg:order-1">
+                <div class="relative order-2 lg:order-1" data-aos="slide-in-left" data-aos-delay="300">
                     <!-- Carousel is now in front (z-10), overlay moved behind (z-0) -->
                     <div id="carousel-effect" class="w-full h-96 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 overflow-hidden bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center relative z-10">
                         <img id="carousel-image" src="./images/carousel/car1.jpg" alt="Carousel Slide" class="w-full h-full object-cover rounded-2xl transition-opacity duration-700 opacity-100" />
                     </div>
                     <div class="absolute inset-0 pointer-events-none bg-gradient-to-br from-accent-400 to-accent-500 rounded-2xl shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500 z-0"></div>
                 </div>
-                <div class="space-y-6 order-1 lg:order-2">
+                <div class="space-y-6 order-1 lg:order-2" data-aos="slide-in-right" data-aos-delay="400">
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Excellence in Every Project</h3>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         With over a decade of experience in the construction industry, RASEEL has established itself as a trusted partner for clients seeking quality, innovation, and reliability in their construction projects.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
-                        <div class="text-center">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="500">
                             <div class="text-3xl font-bold text-accent-500 mb-2">150+</div>
                             <div class="text-gray-600 dark:text-gray-400">Projects Completed</div>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="600">
                             <div class="text-3xl font-bold text-accent-500 mb-2">10+</div>
                             <div class="text-gray-600 dark:text-gray-400">Years Experience</div>
                         </div>
@@ -324,10 +335,91 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <!-- Investor Section -->
+    <section id="investor" class="py-20 bg-gray-50 dark:bg-gray-800" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    <span class="text-accent-500">Investor</span> Relations
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    We ensure our developments are in coherence with the strategic vision to maximize shareholders wealth and contribute to the nation's economy.
+                </p>
+            </div>
+            
+            <!-- Financial Highlights -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2">2.5M+</div>
+                    <div class="text-gray-600 dark:text-gray-400 text-sm">Million SQM Total Built Up Area</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2">8,500+</div>
+                    <div class="text-gray-600 dark:text-gray-400 text-sm">Units Expected & Under Construction</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2">15.2B</div>
+                    <div class="text-gray-600 dark:text-gray-400 text-sm">Billion SAR Total Project Value</div>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-4xl md:text-5xl font-bold text-accent-500 mb-2">45+</div>
+                    <div class="text-gray-600 dark:text-gray-400 text-sm">Total Number of Projects</div>
+                </div>
+            </div>
+            
+            <!-- Why Choose Us -->
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="700">
+                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-12">
+                    Why Choose <span class="text-accent-500">RASEEL</span>?
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="800">
+                        <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Safe Investment</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Proven track record with consistent returns and stable growth</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="900">
+                        <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Strategic Location</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Prime locations across Saudi Arabia's most promising regions</p>
+                    </div>
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Enhanced Lifestyle</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Premium amenities and world-class facilities for residents</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Investor CTA -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="1100">
+                <a href="#contact" class="inline-flex items-center px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <span>Download Investor Profile</span>
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800" data-aos="fade-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                     Our <span class="text-accent-500">Services</span>
                 </h2>
@@ -338,7 +430,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
-                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="300">
                     <div class="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -351,7 +443,7 @@
                 </div>
                 
                 <!-- Service Card 2 -->
-                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="400">
                     <div class="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -364,7 +456,7 @@
                 </div>
                 
                 <!-- Service Card 3 -->
-                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="zoom-in" data-aos-delay="500">
                     <div class="w-16 h-16 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -380,9 +472,9 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white dark:bg-gray-900">
+    <section id="projects" class="py-20 bg-white dark:bg-gray-900" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                     Featured <span class="text-accent-500">Projects</span>
                 </h2>
@@ -393,7 +485,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project Card 1 -->
-                <div class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
                     <div class="relative overflow-hidden">
                         <div class="w-full h-64 bg-gradient-to-br from-accent-400 to-accent-600 group-hover:scale-110 transition-transform duration-500"></div>
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
@@ -411,7 +503,7 @@
                 </div>
                 
                 <!-- Project Card 2 -->
-                <div class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="400">
                     <div class="relative overflow-hidden">
                         <div class="w-full h-64 bg-gradient-to-br from-blue-400 to-blue-600 group-hover:scale-110 transition-transform duration-500"></div>
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
@@ -429,7 +521,7 @@
                 </div>
                 
                 <!-- Project Card 3 -->
-                <div class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700">
+                <div class="group bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="500">
                     <div class="relative overflow-hidden">
                         <div class="w-full h-64 bg-gradient-to-br from-green-400 to-green-600 group-hover:scale-110 transition-transform duration-500"></div>
                         <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
@@ -449,10 +541,90 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <!-- News & Events Section -->
+    <section id="news" class="py-20 bg-gray-50 dark:bg-gray-800" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    Latest <span class="text-accent-500">News</span> & Events
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Stay updated with the latest news, events, and launches from RASEEL Innovation Company.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden">
+                        <div class="w-full h-48 bg-gradient-to-br from-accent-400 to-accent-600"></div>
+                        <div class="absolute top-4 left-4 bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Latest
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">RASEEL Wins Excellence Award</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Recognized for outstanding contribution to sustainable development and innovation in construction.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <span>March 15, 2024</span>
+                            <a href="#" class="text-accent-500 hover:text-accent-600 font-medium">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Card 2 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden">
+                        <div class="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600"></div>
+                        <div class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Event
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Saudi Construction Expo 2024</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">RASEEL to showcase latest innovations and sustainable building solutions at the premier construction event.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <span>April 20, 2024</span>
+                            <a href="#" class="text-accent-500 hover:text-accent-600 font-medium">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News Card 3 -->
+                <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-200 dark:border-gray-700" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative overflow-hidden">
+                        <div class="w-full h-48 bg-gradient-to-br from-green-400 to-green-600"></div>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Launch
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">New Community Development</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Announcing our latest residential community project featuring smart homes and sustainable living.</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                            <span>May 10, 2024</span>
+                            <a href="#" class="text-accent-500 hover:text-accent-600 font-medium">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All News CTA -->
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="600">
+                <a href="#" class="inline-flex items-center px-8 py-4 border-2 border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <span>View All News</span>
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800" data-aos="fade-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                     Get in <span class="text-accent-500">Touch</span>
                 </h2>
@@ -463,7 +635,7 @@
             
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Contact Form -->
-                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700" data-aos="slide-in-left" data-aos-delay="300">
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h3>
                     <form class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
@@ -491,7 +663,7 @@
                 </div>
                 
                 <!-- Contact Info -->
-                <div class="space-y-8">
+                <div class="space-y-8" data-aos="slide-in-right" data-aos-delay="400">
                     <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
                         <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
                         <div class="space-y-4">
@@ -513,12 +685,9 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                     </svg>
                                 </div>
-                                <div >
+                                <div>
                                     <div class="font-semibold text-gray-900 dark:text-white">Phone</div>
-                                <a href="tel:+966543774111"  >
-
-                                        <div  class="text-gray-600 dark:text-gray-300">+966543774111</div>
-                                    </a>
+                                    <div class="text-gray-600 dark:text-gray-300">+966543774111</div>
                                 </div>
                             </div>
                             <div class="flex items-center space-x-4">
@@ -539,11 +708,99 @@
         </div>
     </section>
 
+    <!-- Regional Offices Section -->
+    <section id="offices" class="py-20 bg-white dark:bg-gray-900" data-aos="fade-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                    Our <span class="text-accent-500">Regional</span> Offices
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Strategic presence across Saudi Arabia to serve our clients and partners effectively.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Eastern Region -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Eastern Region</h3>
+                    <div class="space-y-4 text-left">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Khobar</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Headquarters<br>King Faisal Road, Al Rawabi District</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Dammam</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Regional Office<br>Prince Mohammed Street, Al Faisaliyah</p>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full bg-accent-500 hover:bg-accent-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Get Directions
+                    </button>
+                </div>
+                
+                <!-- Central Region -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Central Region</h3>
+                    <div class="space-y-4 text-left">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Riyadh</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Regional Office<br>Northern Ring Road, Al Wadi District</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Sales Center</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">King Fahd Road<br>Al Olaya District</p>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full bg-accent-500 hover:bg-accent-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Get Directions
+                    </button>
+                </div>
+                
+                <!-- Western Region -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-accent-400 to-accent-600 rounded-xl flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Western Region</h3>
+                    <div class="space-y-4 text-left">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Jeddah</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Regional Office<br>King Abdulaziz Road, Al Zahra District</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Sales Center</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Corniche Road<br>Al Hamra District</p>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full bg-accent-500 hover:bg-accent-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        Get Directions
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-gray-900 text-white py-16" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+                <div class="md:col-span-2" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center space-x-2 mb-6">
                         <div class="w-10 h-10 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center">
                             <span class="text-white font-bold text-xl">R</span>
@@ -554,7 +811,7 @@
                         </div>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-md">
-                        Building the future with innovation, quality, and sustainability. Your trusted partner in construction excellence.
+                        Building the future with innovation, quality, and sustainability. Your trusted partner in real estate and community development across Saudi Arabia.
                     </p>
                     <div class="flex space-x-4">
                         <!-- WhatsApp -->
@@ -579,36 +836,96 @@
                     </div>
                 </div>
                 
-                <div>
+                <div data-aos="fade-up" data-aos-delay="300">
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="#home" class="text-gray-400 hover:text-accent-400 transition-colors">Home</a></li>
+                        <li><a href="#communities" class="text-gray-400 hover:text-accent-400 transition-colors">Communities</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-accent-400 transition-colors">About</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-accent-400 transition-colors">Services</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-accent-400 transition-colors">Projects</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-accent-400 transition-colors">Contact</a></li>
+                        <li><a href="#investor" class="text-gray-400 hover:text-accent-400 transition-colors">Investor</a></li>
+                        <li><a href="#news" class="text-gray-400 hover:text-accent-400 transition-colors">News & Events</a></li>
+                        <li><a href="#offices" class="text-gray-400 hover:text-accent-400 transition-colors">Regional Offices</a></li>
                     </ul>
                 </div>
                 
-                <div>
+                <div data-aos="fade-up" data-aos-delay="400">
                     <h4 class="text-lg font-semibold mb-4">Services</h4>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-accent-400 transition-colors">General Contracting</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-accent-400 transition-colors">Design & Planning</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-accent-400 transition-colors">Sustainable Building</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-accent-400 transition-colors">Project Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-accent-400 transition-colors">Real Estate Development</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+            <!-- Contact Info Row -->
+            <div class="grid md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-800" data-aos="fade-up" data-aos-delay="500">
+                <div class="text-center">
+                    <h5 class="text-lg font-semibold mb-3">Call Us</h5>
+                    <p class="text-accent-400 text-xl font-bold">+966 54 377 4111</p>
+                    <p class="text-gray-400 text-sm">Available 24/7</p>
+                </div>
+                <div class="text-center">
+                    <h5 class="text-lg font-semibold mb-3">Email Us</h5>
+                    <p class="text-accent-400 font-medium">info@rasselinnovation.com</p>
+                    <p class="text-gray-400 text-sm">Quick response guaranteed</p>
+                </div>
+                <div class="text-center">
+                    <h5 class="text-lg font-semibold mb-3">Headquarters</h5>
+                    <p class="text-gray-400">King Faisal Road<br>Al Rawabi District, Khobar</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center" data-aos="fade-up" data-aos-delay="600">
                 <p class="text-gray-400">&copy; 2024 RASEEL Innovation Company. All rights reserved.</p>
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-accent-400 transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-accent-400 transition-colors text-sm">Terms of Use</a>
+                    <a href="#" class="text-gray-400 hover:text-accent-400 transition-colors text-sm">Cookie Policy</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic',
+            delay: 0,
+            anchorPlacement: 'top-bottom'
+        });
+        
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                sunIcon.classList.toggle('hidden');
+                moonIcon.classList.toggle('hidden');
+            });
+        }
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
 </body>
 </html>
 
